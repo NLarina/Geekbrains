@@ -1,74 +1,69 @@
 'use strict'
-
-//Задание № 1
-let PrimeArray =[];
-for(let i=1;i<=100;i++)
+// вывод простых чисел в консоль; 
+var i=2;
+while (i<=100) {
+  
+if (isSimple(i) == true)
 {
-    if (isPrimeNumber(i))
+    console.log(i);
+}
+i++;
+}
+
+
+// вывод чисел цикла без тела
+for ( var i=0;  i<10; console.log(i++))
+{
+
+}
+
+
+// создаем массив объектов: наименование товара - стоимость;
+let basket =[]; 
+
+for(var i=0; i<100; i++)
+{
+    basket[i] =
     {
-        PrimeArray.push(i);
+        name: "Product"+ (i+1), 
+        price: Math.floor(Math.random()* (500))
     }
+}  
+// вывод суммы по свойству price объектов товаров; 
+alert(countBasketPrice(basket)); 
 
-}
-alert(PrimeArray);
 
-//Задание №2,№3
-
-let cart =[];
-//Заполним корзину случайными товарами, стоимостью от 5 до 10000. Будем считать что в корзине 40 товаров
-for (let i=0;i<40;i++)
+// вывод пирамиды
+let pyremid="*"
+for (var i=0; i<20; i++)
 {
-   
-    cart.push(Math.floor(Math.random()*(10000-5)+1)+5);
-
+ console.log(pyremid); 
+ pyremid=pyremid+"*"; 
 }
-console.log(cart);
-alert("Корзина наполнена следующими товарами со стоимостью:" +cart);
-
-alert("Итого в корзине на сумму:"+countBasketPrice(cart));;
+    
 
 
-//Задание №4
-for(let i=0;i<10;console.log(i++))
+
+function countBasketPrice( array)
 {
-
-}
-//Задание №5
-
-var Pyramid='';
-for (let i=0;i<20;i++)
-{
-    Pyramid+='x';
-    console.log(Pyramid);
-
-}
-
-
-function countBasketPrice(array)
-{
-    let sum=0;
-    for(var key in array)
+    i=0
+    for (let ar of array)
     {
-        sum+=array[key];
+i=i+ar.price;
     }
-    return sum;
+    return i; 
+
 }
 
-function isPrimeNumber(n)
-{
 
-    if(n==0||n==1) //по определению число 0 и 1 не являются простыми числами
-    {
-        return false;
-    }
-    let i=2
-    while(i<n)
-    {
-        if (n%i==0)
-        {
-            return false;
-        }
-        i++;
-    }
-    return true;
+function isSimple(i)
+{
+   if (i<2)
+   return false; 
+   for (var j=2;j<i;j++)
+   {
+if (i%j==0)
+return false; 
+   }
+   return true; 
 }
