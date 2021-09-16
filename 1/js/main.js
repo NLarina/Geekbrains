@@ -28,11 +28,10 @@ const renderPage = list => {
     console.log(productsList);
     
 
-    //document.querySelector('.products').innerHTML = productsList;
-    productsList.forEach(element => {
-            document.querySelector('.products').insertAdjacentHTML("afterbegin", element);
-
-    });
+    let accum = productsList.reduce((previous, current)=>previous+current); 
+    document.querySelector('.products').innerHTML = accum;
+    
+    
 };
 
 renderPage(products);
