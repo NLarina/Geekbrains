@@ -1,39 +1,22 @@
 const products = [
-    {id: 1, title: 'Notebook', price: 2000, img:"https://picsum.photos/300/300?random=1"},
-    {id: 2, title: 'Mouse', price: 20, img:"https://picsum.photos/300/300?random=2"},
-    {id: 3, title: 'Keyboard', price: 200, img:"https://picsum.photos/300/300?random=3"},
-    {id: 4, title: 'Monitor', price: 50, img:"https://picsum.photos/300/300?random=4"},
-    {id: 4, title: 'HDD', price: 50, img:"https://picsum.photos/300/300?random=6"},
-    {id: 4, title: 'Video card', price: 50, img:"https://picsum.photos/300/300?random=7"},
-    {id: 4, title: 'Web camera', price: 50, img:"https://picsum.photos/300/300?random=8"},
+    {id: 1, title: 'Notebook', price: 2000},
+    {id: 2, title: 'Mouse', price: 20},
+    {id: 3, title: 'Keyboard', price: 200},
+    {id: 4, title: 'Gamepad', price: 50},
 ];
-
-
-
 //Функция для формирования верстки каждого товара
 //Добавить в выводе изображение
-const renderProduct = (ProductObj) => {
-    let{img, title, price} =  ProductObj;
+const renderProduct = (title, price) => {
     return `<div class="product-item">
-
-              
-                <h3 class="title_product">${title}</h3>
-                <img src="${img}">
-                <p class="price">${price}</p>
-                <button class="buy-btn">Add card </button>
+                <h3>${title}</h3>
+                <p>${price}</p>
+                <button class="buy-btn">Купить</button>
             </div>`
 };
 const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item));
+    const productsList = list.map(item => renderProduct(item.title,item.price));
     console.log(productsList);
-    
-
-    //document.querySelector('.products').innerHTML = productsList;
-    productsList.forEach(element => {
-            document.querySelector('.products').insertAdjacentHTML("afterbegin", element);
-
-    });
+    document.querySelector('.products').innerHTML = productsList;
 };
 
 renderPage(products);
-
