@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato&family=Open+Sans&display=swap');
+header{
+    min-height: 50px;
+    width: 100%;
+    position: relative;
+    background-color: tomato;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+
+   
+
+
+}
+.box
+{
+    display: flex;
+   justify-content: space-between;
+   min-height: 50px;
+   align-items: center;
+}
+
+.btn-cart
+{
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.btn-cart:hover>.fa-shopping-cart
+{
+  color: white;
+  transition-duration: .2s;
+  transform: scale(1.5);
+}
+
+
+.btn-cart>.fa-shopping-cart
+{
+    font-size: 30px;
+    opacity: 10;
+   color: rgb(32, 29, 29);   
+}
+.wrapper
+{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.label
+{
+    font-family: 'Alfa Slab One', cursive;
+    display: block;
+    text-transform: uppercase;
+}
+.logo_icon
+{
+  display: inline-flex;
+    padding-left: 35px;
+    padding-top: 10px;
+
+}
+main
+{
+    padding-top: 140px;
+    
+}
+.products
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+  
+}
+.title_product
+{
+  margin: 10px;
+  color:tomato;
+}
+.product-item
+{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e9e9e9;
+    
+   
+}
+.product-item:hover
+{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#bdbebd;
+    
+   
+}
+
+p
+{
+    margin: 0 ;
+}
+main
+{
+    font-family: 'Open Sans', sans-serif;
+}
+.buy-btn
+{
+    border: none;
+    
+    outline: none;
+    background:tomato;
+    width: 70px;
+    height: 40px;
+    color: white;
+    margin-bottom: 10px;
+    font-size: small;
+    text-shadow: 1px 1px 1px rosybrown;
+
+}
+.buy-btn:hover
+{
+    transition-duration: .2s;
+    color: tomato;
+    background: white;
+    border: tomato 2px solid;
+    transform: scale(1.2);
+}
+
+.price{
+    color: tomato;
+    font-size: large;
+    text-shadow: 1px 1px 1px rosybrown;
+    margin: 10px;
+}
+.price::after{
+   content: "$";
+}
+
